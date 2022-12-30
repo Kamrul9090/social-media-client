@@ -8,7 +8,7 @@ const About = () => {
     const { data: usersInfo = [], isLoading, refetch } = useQuery({
         queryKey: ["userInfo"],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/userInfo`)
+            const res = await fetch(`https://social-media-server-delta.vercel.app/userInfo`)
             const data = res.json();
             return data;
         }
@@ -27,7 +27,7 @@ const About = () => {
                 <li>School/University:<a>{usersInfo[0]?.school}</a></li>
                 <li><a>School</a></li>
             </ul>
-            <Modal key={usersInfo[0]?._id} id={usersInfo[0]._id} refetch={refetch}></Modal>
+            <Modal key={usersInfo[0]?._id} id={usersInfo[0]?._id} refetch={refetch}></Modal>
         </div>
     );
 };

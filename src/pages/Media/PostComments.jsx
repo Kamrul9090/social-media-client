@@ -10,7 +10,7 @@ const PostComments = ({ id }) => {
     const { data: comments = [], refetch } = useQuery({
         queryKey: ["comments"],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/comments`)
+            const res = await fetch(`https://social-media-server-delta.vercel.app/comments`)
             const data = await res.json()
             return data;
         }
@@ -25,7 +25,7 @@ const PostComments = ({ id }) => {
         const form = e.target;
         const comment = form.comment.value;
         const addComment = { comment }
-        // fetch(`http://localhost:5000/comments`, {
+        // fetch(`https://social-media-server-delta.vercel.app/comments`, {
         //     method: 'POST',
         //     headers: {
         //         'content-type': 'application/json'
@@ -48,14 +48,14 @@ const PostComments = ({ id }) => {
 
     const addComment = (id) => {
         // setCommentId(id)
-        fetch(`http://localhost:5000/comments/${id}?comment=${myComment}`, {
+        fetch(`https://social-media-server-delta.vercel.app/comments/${id}?comment=${myComment}`, {
             method: 'POST',
             body: JSON.stringify({ myComment })
         })
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    fetch(`http://localhost:5000/comments/${id}`)
+                    fetch(`https://social-media-server-delta.vercel.app/comments/${id}`)
                         .then(res => res.json())
                         .then(data => {
                             console.log(data);

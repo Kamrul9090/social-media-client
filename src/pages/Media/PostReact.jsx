@@ -6,14 +6,14 @@ const PostReact = ({ id }) => {
     const [updateReact, setUpdateReact] = useState(0);
     const handleReact = (id) => {
         setReact(react + 1);
-        fetch(`http://localhost:5000/post/${id}?react=${react}`, {
+        fetch(`https://social-media-server-delta.vercel.app/post/${id}?react=${react}`, {
             method: 'POST',
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    fetch(`http://localhost:5000/post/${id}`)
+                    fetch(`https://social-media-server-delta.vercel.app/post/${id}`)
                         .then(res => res.json())
                         .then(data => {
                             const myReact = data.react;

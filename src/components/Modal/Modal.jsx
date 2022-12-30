@@ -11,7 +11,7 @@ const Modal = ({ id, refetch }) => {
             address: data.address,
             school: data.school
         }
-        fetch(`http://localhost:5000/userInfo/${id}`, {
+        fetch(`https://social-media-server-delta.vercel.app/userInfo/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

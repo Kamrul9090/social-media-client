@@ -30,7 +30,7 @@ const Post = () => {
                     imageURL
                 }
 
-                fetch('http://localhost:5000/post', {
+                fetch('https://social-media-server-delta.vercel.app/post', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
