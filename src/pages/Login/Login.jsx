@@ -40,22 +40,22 @@ const Login = () => {
         <div className='bg-base-200 rounded-md'>
             <h1 className='text-3xl font-bold text-center text-purple-300'>Login</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full space-y-5">
-                <div className='flex flex-col w-72 mx-auto'>
+                <div className='flex flex-col lg:w-72 mx-auto'>
                     <label>Email</label>
                     <input type="email" {...register("email", { required: true })} className="input input-bordered w-full" />
                     {errors.email && <span>This field is required</span>}
                 </div>
 
-                <div className='flex flex-col w-72 mx-auto'>
+                <div className='flex flex-col lg:w-72 mx-auto'>
                     <label>Password</label>
                     <input type="password" {...register("password", { required: true })} className="input input-bordered w-full" />
                     {errors.password && <span>This field is required</span>}
                 </div>
-                <input type="submit" className="btn btn-outline btn-secondary w-72 mx-auto" />
+                <input type="submit" className="btn btn-outline btn-secondary lg:w-72 mx-auto" />
                 <small className='text-center'>Already have an account? <Link to="/signUp"><button className='text-fuchsia-500'>SignUp</button></Link></small>
             </form>
             <div className="divider">OR</div>
-            <button onClick={handleGoogleLogin} className='btn bg-blue-800 text-fuchsia-100 w-72 mx-auto'>Login with Google</button>
+            <button onClick={handleGoogleLogin} className='btn bg-blue-800 text-fuchsia-100 lg:w-72 mx-auto'>Login with Google</button>
         </div>
     );
 };

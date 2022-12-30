@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
+import About from '../../About/About';
 
 const RightSidebar = () => {
     const { user } = useContext(AuthContext);
@@ -25,6 +26,7 @@ const RightSidebar = () => {
                 <li><Link to="/">Login</Link></li>
                 <li><Link to="/">Logout</Link></li>
             </ul>
+            <About></About>
         </div>
     );
 };

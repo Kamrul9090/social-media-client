@@ -19,18 +19,15 @@ const MediaPost = () => {
         return <PacmanLoader></PacmanLoader>
     }
     return (
-        <section id='#media' className="">
+        <section id='#media'>
             {
-                postData.map(post => <div className="card card-compact w-96 mx-auto shadow-xl my-10">
+                postData.map(post => <div className="card card-compact w-80 lg:w-96 mx-auto shadow-xl my-10">
                     <figure><img src={post?.imageURL} alt="Shoes" /></figure>
                     <div className="card-body space-y-2">
                         <p>{post?.post}</p>
                         <div>
                             <PostReact key={post._id} id={post._id}></PostReact>
                             <PostComments key={post._id} id={post._id}></PostComments>
-                        </div>
-                        <div className="card-actions justify-end">
-
                         </div>
                     </div>
                 </div>)

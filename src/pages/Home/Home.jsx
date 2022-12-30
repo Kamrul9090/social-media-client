@@ -1,4 +1,5 @@
 import React from 'react';
+import About from '../About/About';
 import Footer from '../Footer/Footer';
 import Login from '../Login/Login';
 import MediaPost from '../Media/MediaPost';
@@ -9,7 +10,7 @@ const Home = () => {
 
     return (
         <div>
-            <div className='flex flex-col lg:flex-row m-12'>
+            <div className='flex flex-col lg:flex-row lg:m-12'>
                 <RightSidebar></RightSidebar>
                 <div className='w-1/2'>
                     <Post></Post>
